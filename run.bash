@@ -17,7 +17,7 @@ readonly DATA_PATH="Data"
 readonly MARCOINTEGRADO_PATH="$DATA_PATH/$MARCOINTEGRADO_NAME"
 
 # Name of the dir where the marco integrado will be uncompressed
-readonly MARCOINTEGRADO_UNCOMPRESSED_NAME="${MARCOINTEGRADO_NAME%.*}_uncompresed"
+readonly MARCOINTEGRADO_UNCOMPRESSED_NAME="${MARCOINTEGRADO_NAME%.*}_uncompressed"
 
 # Path of the dir where the marco integrado will be uncompressed
 readonly MARCOINTEGRADO_UNCOMPRESSED_PATH="$DATA_PATH/$MARCOINTEGRADO_UNCOMPRESSED_NAME"
@@ -55,8 +55,6 @@ main() {
 
     # Create dir
     mkdir -p "$MARCOINTEGRADO_UNCOMPRESSED_PATH"
-    # Empty dir
-    rm -rf -I "$MARCOINTEGRADO_UNCOMPRESSED_PATH/*"
 
     # Unzip
     unzip $MARCOINTEGRADO_PATH -d "$MARCOINTEGRADO_UNCOMPRESSED_PATH" || { log_msg "ERROR" "Ocurrió un error al momento de descomprimir el marco integrado."; exit 1; }
