@@ -7,6 +7,15 @@ trap cntrl_c SIGINT
 # URL of the Marco Geoestadístico 2020 integrado
 readonly DATA_URL=https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/889463807469/mg_2020_integrado.zip
 
+# Name of the downloaded zip file containing the marco integrado
+readonly MARCOINTEGRADO_NAME=marco_integrado.zip
+
+# Name of the dir where data is going to be downloaded and extracted
+readonly DATA_PATH=Data
+
+# Full name of the downloaded zip file containing the marco integrado
+readonly MARCOINTEGRADO_PATH="$DATA_PATH/$MARCOINTEGRADO_NAME"
+
 # Define functions ============================================================
 
 # Function to log a message to the stdout
@@ -46,6 +55,10 @@ main() {
     # Unzip
     unzip Data/marco_integrado.zip -d Data/marco_integrado_uncompressed || { log_msg "ERROR" "Ocurrió un error al momento de descomprimir el marco integrado."; exit 1; }
     log_msg "INFO" "Listo. Marco integrado descomprimido."
+
+    # Rename data ---------------------
+    log_msg "INFO" "Renombrando archivos..."
+    source Bin/rename.bash || { log_msg "ERROR" "Ocurrió un error al momento de renombrar los componentes del marco integrado."; exit 1; }
 
 }
 
