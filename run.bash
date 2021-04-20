@@ -54,12 +54,12 @@ main() {
     log_msg "INFO" "Descomprimiendo marco integrado..."
 
     # Create dir
-    mkdir -p $MARCOINTEGRADO_UNCOMPRESSED_PATH
+    mkdir -p "$MARCOINTEGRADO_UNCOMPRESSED_PATH"
     # Empty dir
-    rm -rf $MARCOINTEGRADO_UNCOMPRESSED_PATH/*
+    rm -rf -I "$MARCOINTEGRADO_UNCOMPRESSED_PATH/*"
 
     # Unzip
-    unzip $MARCOINTEGRADO_PATH -d $MARCOINTEGRADO_UNCOMPRESSED_PATH || { log_msg "ERROR" "Ocurrió un error al momento de descomprimir el marco integrado."; exit 1; }
+    unzip $MARCOINTEGRADO_PATH -d "$MARCOINTEGRADO_UNCOMPRESSED_PATH" || { log_msg "ERROR" "Ocurrió un error al momento de descomprimir el marco integrado."; exit 1; }
     log_msg "INFO" "Listo. Marco integrado descomprimido."
 
     # Rename data ---------------------
