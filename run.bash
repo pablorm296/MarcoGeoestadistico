@@ -32,7 +32,7 @@ main() {
 
     # Download data -------------------
     log_msg "INFO" "Descargando marco integrado..."
-    source Bin/get_data.bash || { log_msg "ERROR" "Ocurrió un error al momento de descargar el marco integrado."; exit 1; }
+    # source Bin/get_data.bash || { log_msg "ERROR" "Ocurrió un error al momento de descargar el marco integrado."; exit 1; }
     log_msg "INFO" "Listo. Marco integrado descargado."
 
     # Uncompress data -----------------
