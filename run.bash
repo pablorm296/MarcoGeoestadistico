@@ -1,3 +1,7 @@
+# Trap ========================================================================
+
+trap cntrl_c SIGINT
+
 # Define variables ============================================================
 
 # URL of the Marco Geoestadístico 2020 integrado
@@ -15,6 +19,12 @@ log_msg() {
     # Echo msg
     echo "$(date) | $LEVEL : $MSG"
 } 
+
+# Function to trap Cntrl-C
+cntrl_c() {
+    log_msg "ERROR" "El usuario terminó la ejecución del script."
+    exit 1;
+}
 
 main() {
     # Log
