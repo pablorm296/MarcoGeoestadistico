@@ -41,7 +41,7 @@ main() {
     # Create dir
     mkdir -p Data/marco_integrado_uncompressed
     # Empty dir
-    rm -rf Data/*
+    rm -rf Data/marco_integrado_uncompressed/*
 
     # Unzip
     unzip Data/marco_integrado.zip -d Data/marco_integrado_uncompressed || { log_msg "ERROR" "Ocurrió un error al momento de descomprimir el marco integrado."; exit 1; }
