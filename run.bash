@@ -37,6 +37,7 @@ log_msg() {
 
 # Function to trap Cntrl-C
 cntrl_c() {
+    echo "\n\n"
     log_msg "ERROR" "El usuario terminó la ejecución del script."
     exit 1;
 }
