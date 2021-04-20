@@ -11,16 +11,16 @@ readonly DATA_URL=https://www.inegi.org.mx/contenidos/productos/prod_serv/conten
 readonly MARCOINTEGRADO_NAME=marco_integrado.zip
 
 # Name of the dir where data is going to be downloaded and extracted
-readonly DATA_PATH=Data
+readonly DATA_PATH="Data"
 
 # Path of the downloaded zip file containing the marco integrado
 readonly MARCOINTEGRADO_PATH="$DATA_PATH/$MARCOINTEGRADO_NAME"
 
 # Name of the dir where the marco integrado will be uncompressed
-readonly MARCOINTEGRADO_UNCOMPRESSED_NAME = "${MARCOINTEGRADO_NAME%.*}_uncompresed"
+readonly MARCOINTEGRADO_UNCOMPRESSED_NAME="${MARCOINTEGRADO_NAME%.*}_uncompresed"
 
 # Path of the dir where the marco integrado will be uncompressed
-readonly MARCOINTEGRADO_UNCOMPRESSED_PATH = "$DATA_PATH/$MARCOINTEGRADO_UNCOMPRESSED_NAME"
+readonly MARCOINTEGRADO_UNCOMPRESSED_PATH="$DATA_PATH/$MARCOINTEGRADO_UNCOMPRESSED_NAME"
 
 # Define functions ============================================================
 
